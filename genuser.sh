@@ -8,7 +8,7 @@ function gen {
 userid=$((userid+1))
 /usr/sbin/useradd -u $userid -g $groupid -s /bin/bash -d /home/$user -m $user
 passwd=$(hex)
-$user:$passwd | chpasswd
+echo $user:$passwd | chpasswd
 echo "-- Mdp de $user -> $passwd"
 }
 /usr/sbin/groupadd -g $groupid apprensemble
