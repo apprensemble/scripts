@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
-socket=/tmp/apprensemble
+dSocket=/tmp/
 session=apprensemble
+socket=${dSocket}$session
+TMUX=""
 while [ ! -z "$*" ]
 do
 if [ "$1" = "ro" ];then
@@ -17,8 +19,8 @@ elif [ "$1" = '--socket' ];then
 fi
 done
 if [ ! -e $socket ];then
-  tmux -S $socket new -s $session
+  tmux -S $socket new-session -s $session
 else
-  tmux -S $socket attach -t $session $ro || tmux -S $socket new -s $session
+  tmux -S $socket attach -t $session $ro || tmux -S $socket new-session -s $session 
 fi
 exit 0
