@@ -1,0 +1,1 @@
+docker run -p 4200:4200 -e SIAB_USER=thierry -e SIAB_PASSWORD=4lamaison. -e SIAB_PKGS="gcc sbcl emacs nano man ruby perl net-tools libstdc++-doc telnet java-1.8.0-openjdk-devel ctags gdb" -e SIAB_SUDO=true grillon/docker-shellinabox
